@@ -4,7 +4,8 @@
     <div class="offcanvas-header">
       <h5 id="offcanvas-label">Update Course</h5>
       <button type="button" id="close-offcanvas" class=
-        "btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        "btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+      </button>
     </div>
     <div class="offcanvas-body">
       <form class="text-start needs-validation" id="courses-create-form" novalidate>
@@ -32,8 +33,8 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="start" class="form-label">Start time
-            <input type="text" class="form-control" id="start" v-model="start" placeholder=
+          <label for="start" class="form-label">Startzeit
+            <input type="time" class="form-control" id="start" v-model="start" placeholder=
               "this.ende" >
           </label>
           <div class="invalid-feedback">
@@ -41,8 +42,8 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="ende" class="form-label">End time
-            <input type="text" class="form-control" id="ende" v-model="ende" placeholder=
+          <label for="ende" class="form-label">Endzeit
+            <input type="time" class="form-control" id="ende" v-model="ende" placeholder=
               "hh:mm:ss" >
           </label>
           <div class="invalid-feedback">
@@ -58,7 +59,7 @@
           </ul>
         </div>
         <div class="mt-5">
-          <button class="btn btn-primary me-3" type="submit" @click.prevent=
+          <button class="btn btn-primary me-3" type="submit" @click=
             "updateCourse(courseid)">Update</button>
           <button class="btn btn-danger" type="reset">Reset</button>
         </div>

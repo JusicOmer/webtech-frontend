@@ -8,7 +8,8 @@
     <div class="offcanvas-header">
       <h5 id="offcanvas-label">Create new Course</h5>
       <button type="button" id="close-offcanvas" class=
-        "btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        "btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+      </button>
     </div>
     <div class="offcanvas-body">
       <form class="text-start needs-validation" id="courses-create-form" novalidate>
@@ -32,12 +33,12 @@
           </select>
           </label>
           <div class="invalid-feedback">
-            Please select a valid gender.
+            Please select a valid day.
           </div>
         </div>
         <div class="mb-3">
-          <label for="start" class="form-label">Start time
-          <input type="text" class="form-control" id="start" v-model="start" placeholder=
+          <label for="start" class="form-label">Startzeit
+          <input type="time" class="form-control" id="start" v-model="start" placeholder=
             "hh:mm:ss" required>
           </label>
           <div class="invalid-feedback">
@@ -45,8 +46,8 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="ende" class="form-label">End time
-          <input type="text" class="form-control" id="ende" v-model="ende" placeholder=
+          <label for="ende" class="form-label">Endzeit
+          <input type="time" class="form-control" id="ende" v-model="ende" placeholder=
             "hh:mm:ss" required>
           </label>
           <div class="invalid-feedback">
@@ -130,9 +131,21 @@ export default {
       }
     },
     validate() {
-      const form = document.getElementById('courses-create-form');
-      form.classList.add('was-validated');
-      return form.checkValidity();
+      let valid = true;
+      const forms = document.querySelectorAll('.needs-validation');
+
+      Array.prototype.slice.call(forms).forEach((form) => {
+        form.addEventListener('submit', (event) => {
+          if (!form.checkValidity()) {
+            valid = false;
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      });
+      return valid;
     },
   },
 };
@@ -142,9 +155,9 @@ export default {
 <style scoped>
 .sticky-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 15px;
+  bottom: 50px;
+  right: 70px;
+  padding: 20px 15px;
   border-radius: 30px;
 }
 </style>

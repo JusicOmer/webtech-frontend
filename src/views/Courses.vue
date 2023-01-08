@@ -1,5 +1,7 @@
 <template>
-  <h1>Courses</h1>
+  <br>
+  <h1>Kurse</h1>
+  <br>
   <div class="container-fluid">
     <card-table-test :courses="this.courses"></card-table-test>
   </div>
@@ -60,5 +62,7 @@ export default {
 </script>
 
 <style scoped>
-
+card-table-test{
+  background-color: #42b983;
+}
 </style>
