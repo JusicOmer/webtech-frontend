@@ -11,7 +11,7 @@
           Button "Create new Course" klickst. Zudem hast du die Möglichkeit, mit Klick auf
           beiden Buttons "Edit" und "Delete" den Kurs zu bearbeiten oder zu löschen</p>
         <a href="https://github.com/JusicOmer/webtech-frontend" class="link-primary" title="backend">Backend Repository</a>
-        <h3> </h3>
+        <br>
         <a href="https://github.com/JusicOmer/webtechprojekt" class="link-primary" title="forntend">Frontend Repository</a>
       </div>
     </div>
